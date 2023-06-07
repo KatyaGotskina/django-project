@@ -1,0 +1,15 @@
+{% extends 'shop_app/main.html' %}
+{% block content %}
+    <h5>Регистрация</h5>
+
+    {% if form.errors %}
+    <p>
+        {{ form.errors.error }}
+    </p>
+    {% endif %}
+    <form action="{% url 'register' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">войти</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+.my_footer {
+    background-color: rgba(61, 128, 98, 0.7);
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}
+
+.my_footer h4{
+    margin-top: 3px;
+    color: #194531;
+    font-size: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    /* text-align: center; */
+}
+
+.register {
+    float: right;
+    background: rgb(116, 82, 82);
+}

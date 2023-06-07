@@ -1,0 +1,38 @@
+{% extends 'shop_app/main.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'shop_app/css/show_order.css' %}">
+{% endblock %}
+{% block content %}
+<button class="btn btn-danger" style="margin-top: 20px; margin-left: 20px">
+    <a href="{% url 'profile' %}" style="text-decoration: none; color: white">В профиль</a>
+</button>  
+<div class="conteiner">
+      <div class="row justify-content-center">
+        <h4 style="margin-left: 30px; margin-top: 9px;">{{ order.status }}</h4>
+        <h4 style="margin-left: 30px;">{{ order.date }}</h4>
+      {% for product in products %}
+      <div class="col-lg-2 col-sm-6">
+          <div class="product-card" style="height: 230px;">
+              <div class="prod-image">
+                <a href="#"><img src="{{ product.image.url }}" alt=""></a>
+
+              </div>
+              <div class="prod-details">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#{{ product.id }}">{{ product.name }}</a>
+                  <div class="bottom-details d-flex justify-content-between">
+                      <p class="card-text">{{ product.weight }} кг</p>
+                      <p class="card-text" style="font-size: 17px;">{{ product.price }} руб</p>
+                  </div>
+              </div>
+              </div> 
+              </div>
+              {% endfor %}
+
+        </div> 
+
+
+
+                 
+{% endblock %}

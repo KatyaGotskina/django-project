@@ -1,0 +1,61 @@
+{% extends 'shop_app/main.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'shop_app/css/home.css' %}">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 col-sm-6">           
+        <div class="images-homepage" style="float: left;">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <img src="media/homepage/girl.jpeg" class="homepage_image" style="margin-top: 180px; margin-left: 10px; width: 270px">
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <img src="media/homepage/Afternoon_coffee.jpeg" class="homepage_image" style="margin-left: 20px;
+                    width: 230px; margin-top: 10px;">
+                    <img src="media/homepage/_.jpeg" class="homepage_image" style="margin-left: 65px; margin-top: 150px; 
+                    width: 200px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+        <div class="statistic-product">
+            <h5 style="text-align: center; margin-top: 40%; font-size: 35px; color: rgb(70, 121, 70);">Скорее к покупкам!</h5>
+            <button class="btn btn-success" style="margin: 0 auto; display: block; width: 120px; height: 50px;">
+                <a href="menu" style="text-decoration: none; color:azure">Вперед</a>
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+            <div class="statistic-product">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div>
+                            <img src="media/homepage/products.jpg" class="homepage_inf_block" style="width: 240px; margin-top: 10px;">
+                            <h4 style="margin-left: 15px; width: 210px;"> 
+                                {{ count_products }} продуктов на продажу
+                            </h4>
+                        </div>
+                        <div style="margin-left: 80px; margin-top: 80px;">
+                            <h4 style="margin-left: 20px; width: 150px;"> 
+                                {{ count_categories }} категорий продуктов
+                            </h4>
+                            <img src="media/homepage/categories.jpg" class="homepage_inf_block" style="width: 200;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div style="margin-top: 140px;">
+                            <h4 style="margin-left: 140px;"> 
+                                Бесплатная доставка на дом
+                            </h4>
+                            <img src="media/homepage/delivery.jpg" class="homepage_inf_block" style="width: 270px; margin-left: 70px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+.order {
+    border: thick double black;
+    background: rgb(160, 209, 185);
+    position: absolute;
+    width: 500px;
+    padding: 40px;
+    top: 20%;
+    left: 36%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.address_input {
+    text-align: center; margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    background: rgb(229, 213, 191);
+    margin-bottom: 10px;
+    border-radius: 20px;
+}

@@ -1,0 +1,24 @@
+{% extends 'shop_app/main.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'shop_app/css/make_order.css' %}">
+{% endblock %}
+{% block content %}
+    <form action="{% url 'cancel_order' %}" class="order">
+        {% csrf_token %}
+         <p style="font-size: 20px;">Выберите адрес</p>
+        <p><select size="3" multiple name="hero[]">
+         <option disabled>Выберите адрес..</option>
+         {% for address in addresses %}
+         <option value="add">{{ address }}</option>
+         {% endfor %}
+        </select></p>
+        <input type="text" value="{{ data.order_id }}" name="order_id" style="display: none;">
+        <p style="font-size: 20px;">Добавить адрес</p>
+        <input type="text" name="address" class="address_input">
+        <button style="border-radius: 20px;">
+            Сделать заказ
+        </button>
+       </form>
+{% endblock %}
+

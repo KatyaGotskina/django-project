@@ -1,0 +1,15 @@
+.homepage_image {
+    border: thick double #458b7c; 
+    border-radius: 100%;
+}
+
+.homepage_inf_block {
+    width: 200px; 
+    border: thick double #458b7c; 
+    border-radius: 100%;
+}
+
+.statistic-product h4 {
+    text-align: center;
+    font-size: 18px;
+}

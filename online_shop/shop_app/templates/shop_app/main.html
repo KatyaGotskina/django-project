@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<head>
+    <title>Shesterochka</title>
+    <link rel="stylesheet" href="{% static 'shop_app/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success-subtle">
+        <span class="navbar-brand mb-0 h1">Шестерочка</span>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mm-auto mb-2 mb-lg-0" style="margin-left: 540px;">
+            <li class="nav-item active"><a class="nav-link" href="/">Главная страница</a></li>
+            <li class="nav-item"><a class="nav-link" href="/menu">К покупкам!</a></li>
+            {% if user and user.is_superuser %}
+                <li class="nav-item"><a class="nav-link" href="/admin" style="margin-left: 400px;">Админ-панель</a></li>
+            {% endif %}
+          </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-person-running fa-xl"></i></a></li> 
+                {% block basket %}{% endblock %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user fa-lg"></i></a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Войти</a></li> 
+                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Зарегистрироваться</a></li>
+            {% endif %}
+            </ul>
+        </div>
+      </nav>
+    {% block content %}{% endblock %}
+    
+    
+        <footer>
+        <div class="my_footer">
+            <div class="row">
+                <div class="col-md-4 col-6">
+                    <h4>Помощь</h4>
+                    <ul class="bottom-list">
+                        <li><i class="fa-solid fa-envelope-circle-check"></i> shesterochka.help@gmail.com</li>
+                        <li><i class="fa-sharp fa-solid fa-phone-volume"></i> +7-966-606-00-60</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-6">
+                    <h4>Время работы</h4>
+                    <ul class="bottom-list">
+                        <li><i class="fa-solid fa-clock"></i> Будние дни: 08:00-23:00</li>
+                        <li><i class="fa-sharp fa-solid fa-mug-hot"></i> Выходные: 09:00-00:00</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-6">
+                    <h4>Контакты</h4>
+                    <ul class="bottom-list">
+                        <li><i class="fa-solid fa-address-book"></i> katya.gotskina@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/1eec33a14f.js" crossorigin="anonymous"></script>
+</body>
+</html>
